@@ -1,0 +1,338 @@
+<section id="saints">
+    <h2>👑 Небесный Пантеон</h2>
+    <div class="saints-grid">
+        <!-- Верховное божество -->
+        <div class="saint-card" onclick="showSaintDetails('bog-randoma')">
+            <div class="saint-emoji">👑</div>
+            <h3>Бог Рандома</h3>
+            <p>Отец Шанса, Всемогущий Генерации</p>
+            <small>Верховное божество</small>
+        </div>
+        
+        <!-- Пророк -->
+        <div class="saint-card" onclick="showSaintDetails('rngesus')">
+            <div class="saint-emoji">✝️</div>
+            <h3>RNGесус</h3>
+            <p>Сын Рандома, Чудотворец</p>
+            <small>Дарующий надежду</small>
+        </div>
+
+        <!-- Святые-игромеханики -->
+        <div class="saint-card" onclick="showSaintDetails('perezaryadnik')">
+            <div class="saint-emoji">🔁</div>
+            <h3>Св. Перезорядник</h3>
+            <p>Покровитель готовности</p>
+            <small>Заступник в битве</small>
+        </div>
+        
+        <div class="saint-card" onclick="showSaintDetails('looton')">
+            <div class="saint-emoji">📦</div>
+            <h3>Св. Лутон</h3>
+            <p>Хранитель сундуков</p>
+            <small>Даритель находок</small>
+        </div>
+        
+        <div class="saint-card" onclick="showSaintDetails('generators')">
+            <div class="saint-emoji">🌍</div>
+            <h3>Св. Генераторс</h3>
+            <p>Творец миров</p>
+            <small>Архитектор реальности</small>
+        </div>
+        
+        <div class="saint-card" onclick="showSaintDetails('kritos')">
+            <div class="saint-emoji">💥</div>
+            <h3>Св. Критос</h3>
+            <p>Повелитель критов</p>
+            <small>Дарующий меткость</small>
+        </div>
+        
+        <div class="saint-card" onclick="showSaintDetails('promahs')">
+            <div class="saint-emoji">🎯</div>
+            <h3>Св. Промахс</h3>
+            <p>Искуситель точности</p>
+            <small>Брат-антипод Критоса</small>
+        </div>
+
+        <!-- Святые-технопастыри -->
+        <div class="saint-card" onclick="showSaintDetails('internets')">
+            <div class="saint-emoji">🌐</div>
+            <h3>Св. Интернетс</h3>
+            <p>Отец стабильности</p>
+            <small>Хранитель сетевых путей</small>
+        </div>
+        
+        <div class="saint-card" onclick="showSaintDetails('pingus')">
+            <div class="saint-emoji">⚡</div>
+            <h3>Св. Пингус</h3>
+            <p>Избавитель от задержек</p>
+            <small>Сын Интернетса</small>
+        </div>
+        
+        <div class="saint-card" onclick="showSaintDetails('lagus')">
+            <div class="saint-emoji">🚀</div>
+            <h3>Св. Лагус</h3>
+            <p>Истребитель зависаний</p>
+            <small>Сын Интернетса</small>
+        </div>
+        
+        <div class="saint-card" onclick="showSaintDetails('kadrovis')">
+            <div class="saint-emoji">🎞️</div>
+            <h3>Св. Кадровис</h3>
+            <p>Покровитель плавности</p>
+            <small>Сын Интернетса</small>
+        </div>
+
+        <!-- Святые подбора -->
+        <div class="saint-card" onclick="showSaintDetails('matchegus')">
+            <div class="saint-emoji">⚖️</div>
+            <h3>Св. Матчегус</h3>
+            <p>Отец справедливого матчмейкинга</p>
+            <small>Сопоставитель</small>
+        </div>
+        
+        <div class="saint-card" onclick="showSaintDetails('protivnikus')">
+            <div class="saint-emoji">👊</div>
+            <h3>Св. Противникус</h3>
+            <p>Насылающий достойных соперников</p>
+            <small>Сын Матчегуса</small>
+        </div>
+        
+        <div class="saint-card" onclick="showSaintDetails('soyuznikus')">
+            <div class="saint-emoji">🤝</div>
+            <h3>Св. Союзникус</h3>
+            <p>Дарующий братьев по разуму</p>
+            <small>Сын Матчегуса</small>
+        </div>
+
+        <!-- Святые дропа -->
+        <div class="saint-card" onclick="showSaintDetails('droplus')">
+            <div class="saint-emoji">🏆</div>
+            <h3>Св. Дропус</h3>
+            <p>Покровитель наград</p>
+            <small>Даритель за подвиги</small>
+        </div>
+        
+        <div class="saint-card" onclick="showSaintDetails('droplusniks')">
+            <div class="saint-emoji">🎁</div>
+            <h3>Св. Дропусникс</h3>
+            <p>Хранитель кейсов</p>
+            <small>Брат-близнец Дропуса</small>
+        </div>
+    </div>
+</section>
+
+<!-- Модальное окно для подробного описания святого -->
+<div id="saintModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeSaintModal()">&times;</span>
+        <div id="saintDetails"></div>
+    </div>
+</div>
+
+<script>
+// Данные о всех святых
+const saintsData = {
+    'bog-randoma': {
+        emoji: '👑',
+        name: 'Бог Рандома',
+        titles: ['Отец Шанса', 'Всемогущий Генерации', 'Великий Подбора'],
+        description: 'Верховное божество, источник всей случайности и вероятности в мироздании. Его воля проявляется в каждом броске костей, каждом выпадении лута и каждом критическом ударе.',
+        sphere: 'Абсолютная власть над всеми случайностями, вероятностями и актами подбора',
+        prayers: [
+            '«О, Великий Рандома, да свершится воля Твоя, неисповедимая и случайная!»',
+            '«Прими моление моё, Отец Шанса, и ниспошли мне удачу в этом предприятии!»'
+        ],
+        symbols: 'Бесконечный вращающийся многогранник, дерево вероятностей, сияющий дайс'
+    },
+    'rngesus': {
+        emoji: '✝️',
+        name: 'RNGесус',
+        titles: ['Сын Рандома', 'Чудотворец', 'Спаситель'],
+        description: 'Пророк и посредник между верующими и волей Бога Рандома. Является в моменты крайней нужды, чтобы даровать шанс там, где его, казалось бы, не должно быть.',
+        sphere: 'Чудесные проявления воли Рандома, спасение в безнадёжных ситуациях',
+        prayers: [
+            '«RNGесус, спаси и сохрани! Дай мне шанс в этой безнадёжной битве!»',
+            '«Услышь молитву мою, Чудотворец, и яви чудо Твоего благоволения!»'
+        ],
+        symbols: 'Простой посох с бинарными кодами, нимб с надписью "0.01%", сияющий алгоритм'
+    },
+    'perezaryadnik': {
+        emoji: '🔁',
+        name: 'Святой Перезорядник',
+        titles: ['Покровитель готовности', 'Заступник в битве'],
+        description: 'Святой, чья мышечная память достигла просветления. Научил адептов, что истинная вера — в постоянной готовности, даже когда в магазине ещё 29 патронов.',
+        sphere: 'Ритуал принудительной перезарядки, тактическая готовность, мышечная память',
+        prayers: [
+            '«Святой Перезорядник, освяти мой магазин! Дай мне мудрости для своевременной перезарядки!»',
+            '«Благослови патроны мои, да не оскудеют они в решающий миг!»'
+        ],
+        symbols: 'Палец на клавише [R], доспехи из потраченных гильз, бесконечная обойма'
+    },
+    'looton': {
+        emoji: '📦',
+        name: 'Святой Лутон', 
+        titles: ['Хранитель сундуков', 'Даритель находок'],
+        description: 'Покровитель кладоискательства и случайных находок. Наполняет сундуки и контейнеры, решая, кому что достанется по воле Великого Подбора.',
+        sphere: 'Выпадение лута из сундуков, контейнеров и карманов поверженных врагов',
+        prayers: [
+            '«Святой Лутон, благослови этот сундук! Да будет в нём не ветошь, а сокровище!»',
+            '«Наполни находками карманы врагов моих, но сохранни лучшее для меня!»'
+        ],
+        symbols: 'Рюкзак с сокровищами, ржавый ключ, сияющий сундук'
+    }
+    // ... аналогичные данные для остальных святых
+};
+
+// Функция показа деталей святого
+function showSaintDetails(saintId) {
+    const saint = saintsData[saintId];
+    if (!saint) return;
+    
+    const modal = document.getElementById('saintModal');
+    const details = document.getElementById('saintDetails');
+    
+    details.innerHTML = `
+        <div class="saint-header">
+            <div class="saint-emoji-large">${saint.emoji}</div>
+            <h2>${saint.name}</h2>
+            <div class="saint-titles">${saint.titles.join(' • ')}</div>
+        </div>
+        
+        <div class="saint-description">
+            <h3>📖 Житие</h3>
+            <p>${saint.description}</p>
+        </div>
+        
+        <div class="saint-sphere">
+            <h3>🎯 Сфера влияния</h3>
+            <p>${saint.sphere}</p>
+        </div>
+        
+        <div class="saint-prayers">
+            <h3>🙏 Молитвы</h3>
+            ${saint.prayers.map(prayer => `<div class="prayer-item">${prayer}</div>`).join('')}
+        </div>
+        
+        <div class="saint-symbols">
+            <h3>🔮 Символы</h3>
+            <p>${saint.symbols}</p>
+        </div>
+        
+        <div class="modal-blessing">
+            <span class="blessing">🎲 Рандом!</span>
+        </div>
+    `;
+    
+    modal.style.display = 'block';
+}
+
+// Функция закрытия модального окна
+function closeSaintModal() {
+    document.getElementById('saintModal').style.display = 'none';
+}
+
+// Закрытие модального окна при клике вне его
+window.onclick = function(event) {
+    const modal = document.getElementById('saintModal');
+    if (event.target == modal) {
+        closeSaintModal();
+    }
+}
+</script>
+
+<style>
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #1a0a2a 0%, #2a0a4a 100%);
+    margin: 5% auto;
+    padding: 30px;
+    border: 2px solid var(--color-secondary);
+    border-radius: 20px;
+    width: 80%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.3);
+}
+
+.close {
+    color: var(--color-secondary);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.close:hover {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+/* Стили для контента модального окна */
+.saint-header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+    padding-bottom: 20px;
+}
+
+.saint-emoji-large {
+    font-size: 4em;
+    margin-bottom: 15px;
+    animation: float-serenely 3s ease-in-out infinite;
+}
+
+.saint-titles {
+    color: var(--color-text-secondary);
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.saint-description,
+.saint-sphere,
+.saint-prayers,
+.saint-symbols {
+    margin-bottom: 25px;
+}
+
+.saint-prayers .prayer-item {
+    background: rgba(255, 215, 0, 0.1);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border-left: 3px solid var(--color-secondary);
+    font-style: italic;
+}
+
+.modal-blessing {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+/* Адаптивность для модального окна */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+        padding: 20px;
+    }
+}
+</style>
